@@ -1,2 +1,2 @@
-# salon_fryzjerski
+salon_fryzjerski
 projekt_semestralny
