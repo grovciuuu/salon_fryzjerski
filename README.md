@@ -1,4 +1,4 @@
-# salon u "cvejlla"
+# salon u brokula
 
 Autorzy projektu: Martyna Brejer, Szymon Myrcha
 
