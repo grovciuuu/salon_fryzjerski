@@ -19,10 +19,10 @@ godzinami pracy.
 -css3
 -javascript
 
-Instrukcja uruchomienia
+# Instrukcja uruchomienia
 
-testowe dane costam
+# testowe dane costam
 
-opis fukncji dodatkowych
+# opis fukncji dodatkowych
 
-projekt_semestralny
+# projekt_semestralny
