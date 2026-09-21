@@ -1,6 +1,6 @@
 # salon u brokula
 
-Autorzy projektu: Martyna Brejer, Szymon Myrcha
+Autorzy projektu: Martyna Brejer, Szymon Myrcha 5it
 
 # Opis systemu:
 
@@ -14,10 +14,12 @@ System sprawdza dostępność fryzjera i blokuje terminy zajęte, przeszłe lub 
 godzinami pracy.
 
 # Technologie zastosowane to:
--php 8.4
--html5
--css3
--javascript
+PHP 8.4
+HTML 5
+CSS 3
+JAVASCRIPT
+MYSQL
+Github
 
 # Instrukcja uruchomienia
 
