@@ -15,11 +15,11 @@ godzinami pracy.
 
 # Technologie zastosowane to:
 PHP 8.4 <br>
-HTML 5
-CSS 3
-JAVASCRIPT
-MYSQL
-Github
+HTML 5 <br>
+CSS 3 <br>
+JAVASCRIPT <br>
+MYSQL <br>
+Github <br>
 
 # Instrukcja uruchomienia
 
