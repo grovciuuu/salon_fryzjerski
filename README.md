@@ -14,7 +14,7 @@ System sprawdza dostępność fryzjera i blokuje terminy zajęte, przeszłe lub 
 godzinami pracy.
 
 # Technologie zastosowane to:
-PHP 8.4
+PHP 8.4 <br>
 HTML 5
 CSS 3
 JAVASCRIPT
