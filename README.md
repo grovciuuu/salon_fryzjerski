@@ -1,6 +1,8 @@
-# salon u brokula
+# Salon u brokuła
 
-Autorzy projektu: Martyna Brejer, Szymon Myrcha 5it
+Autorzy projektu: <br>
+Martyna Brejer <br>
+Szymon Myrcha 5it
 
 # Opis systemu:
 
