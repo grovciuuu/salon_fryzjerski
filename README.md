@@ -1,32 +1,80 @@
-# Salon u brokuła
+# Aura Fryzur
 
-Autorzy projektu: <br>
-Martyna Brejer <br>
-Szymon Myrcha 5it
+# System Rezerwacji Wizyt Online – Salon Fryzjerski
 
-# Opis systemu:
+Kompleksowa aplikacja internetowa umożliwiająca klientom samodzielną rezerwację terminów usług fryzjerskich online, a pracownikom oraz administratorom efektywne zarządzanie harmonogramem.
 
-Aplikacja umożliwia klientom salonu fryzjerskiego samodzielne rezerwowanie wizyt online.
-System obsługuje trzy role: **klient** (przegląda ofertę, rezerwuje termin, zarządza
-własnymi wizytami), **pracownik** (widzi swoje wizyty i zmienia ich status) oraz
-**administrator** (zarządza usługami, pracownikami i wszystkimi rezerwacjami).
+---
 
-Rezerwacja przebiega w kolejności: usługa → pracownik → data → godzina → potwierdzenie.
-System sprawdza dostępność fryzjera i blokuje terminy zajęte, przeszłe lub poza
-godzinami pracy.
+## Autorzy i Informacje o Projekcie
+* **Projekt Semestralny** – Przedmiot: *Tworzenie stron i aplikacji internetowych*
+* **Klasa:** 5 Technikum Informatycznego
+* **Okres realizacji:** wrzesień – listopad 2026 r.
+* **Autorzy:** Szymon Myrcha, Martyna Brejer
 
-# Technologie zastosowane to:
-PHP 8.4 <br>
-HTML 5 <br>
-CSS 3 <br>
-JAVASCRIPT <br>
-MYSQL <br>
-Github <br>
+---
 
-# Instrukcja uruchomienia
+## Opis Systemu
 
-# testowe dane costam
+Aplikacja automatyzuje proces umawiania wizyt w salonie fryzjerskim. System dynamicznie weryfikuje dostępność fryzjerów, zapobiegając nakładaniu się terminów oraz rezerwacji poza godzinami pracy lub w przeszłości.
 
-# opis fukncji dodatkowych
+### Proces Rezerwacji
+Proces przebiega w ścisłej kolejności:
+`Wybór usługi`-> `Wybór pracownika` -> `Wybór daty` -> `Wybór godziny` -> `Potwierdzenie rezerwacji`
 
-# projekt_semestralny
+### System Rol i Uprawnień
+* ** Klient:** Przegląda aktualną ofertę, rezerwuje dogodne terminy oraz zarządza historią i statusem własnych wizyt.
+* ** Pracownik:** Posiada dostęp do indywidualnego panelu z harmonogramem swoich wizyt i możliwością zmiany ich statusu.
+* ** Administrator:** Zarządza pełną bazą danych (CRUD usług, kategorii), kontami użytkowników i pracowników oraz posiada wgląd we wszystkie rezerwacje w systemie.
+
+---
+
+## Zastosowane Technologie
+
+* **Backend:** PHP 8.4 (PDO, Prepared Statements)
+* **Frontend:** HTML5, CSS3, JavaScript
+* **Baza danych:** MySQL
+* **Kontrola wersji:** Git & GitHub
+
+---
+
+## Struktura Repozytorium
+
+```text
+├── database/
+│   └── database.sql      # Skrypt struktury bazy danych wraz z danymi testowymi
+├── public/               # Główny katalog aplikacji (punkt wejścia)
+│   ├── css/              # Arkusze stylów
+│   ├── js/               # Skrypty JavaScript
+│   └── assets/           # Pliki graficzne i ikony
+└── README.md             # Dokumentacja projektu
+```
+
+---
+
+## Instrukcja Uruchomienia
+
+### Wymagania wstępne
+* Serwer lokalny obsługujący PHP 8.4 oraz MySQL XAMPP
+
+   Sklonuj repozytorium,
+   Skonfiguruj bazę danych,
+   Uruchom serwer MySQL,
+   Utwórz nową pustą bazę danych,
+   Zaimportuj plik struktury znajdujący się w `/database/database.sql`
+
+---
+
+
+Dane testowe do logowania
+
+| Rola          | E-mail (login)              | Hasło     |
+|---------------|------------------------------|-----------|
+| Administrator | admin@salon.pl               | haslo123  |
+| Pracownik     | marta.fryzjer@salon.pl       | haslo123  |
+| Pracownik     | kamil.fryzjer@salon.pl       | haslo123  |
+| Klient        | julia.klient@example.com     | haslo123  |
+
+
+---
+
