@@ -1,12 +1,30 @@
-# salon u brokuła
+## Struktura Repozytorium
 
-Autorzy projektu: Martyna Brejer, Szymon Myrcha
+```text
+├── database/
+│   └── database.sql      # Skrypt struktury bazy danych wraz z danymi testowymi
+├── public/               # Główny katalog aplikacji (punkt wejścia)
+│   ├── css/              # Arkusze stylów
+│   ├── js/               # Skrypty JavaScript
+│   └── assets/           # Pliki graficzne i ikony
+└── README.md             # Dokumentacja projektu
+```
 
-Opis systemu:
+---
 
-Technologie zastosowane to:
+## Instrukcja Uruchomienia
 
-Instrukcja uruchomienia costam
+### Wymagania wstępne
+* Serwer lokalny obsługujący PHP 8.4 oraz MySQL XAMPP
+
+   Sklonuj repozytorium,
+   Skonfiguruj bazę danych,
+   Uruchom serwer MySQL,
+   Utwórz nową pustą bazę danych,
+   Zaimportuj plik struktury znajdujący się w `/database/database.sql`
+
+---
+
 
 Dane testowe do logowania
 
@@ -17,8 +35,7 @@ Dane testowe do logowania
 | Pracownik     | kamil.fryzjer@salon.pl       | haslo123  |
 | Klient        | julia.klient@example.com     | haslo123  |
 
-Hasła w bazie są zapisane jako hashe bcrypt — logowanie odbywa się przez formularz aplikacji (e-mail + hasło), nigdy jawnym tekstem.
 
-opis fukncji dodatkowych
+---
 
-projekt_semestralny
+
