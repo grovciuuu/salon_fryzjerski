@@ -1,0 +1,70 @@
+erDiagram
+    USERS ||--o{ RESERVATIONS : "składa (jako klient)"
+    USERS ||--o| EMPLOYEES : "jest kontem dla"
+    EMPLOYEES ||--o{ RESERVATIONS : "obsługuje"
+    EMPLOYEES ||--o{ EMPLOYEE_SERVICES : "wykonuje"
+    EMPLOYEES ||--o{ EMPLOYEE_AVAILABILITY : "ma dostępność"
+    SERVICES ||--o{ EMPLOYEE_SERVICES : "wykonywana przez"
+    SERVICES ||--o{ RESERVATIONS : "jest przedmiotem"
+    SERVICE_CATEGORIES ||--o{ SERVICES : "grupuje"
+
+    USERS {
+        int id PK
+        varchar first_name
+        varchar last_name
+        varchar email UK
+        varchar password_hash
+        varchar phone
+        enum role
+        tinyint is_active
+        timestamp created_at
+    }
+
+    SERVICE_CATEGORIES {
+        int id PK
+        varchar name UK
+        text description
+    }
+
+    SERVICES {
+        int id PK
+        int category_id FK
+        varchar name
+        text description
+        smallint duration
+        decimal price
+        tinyint is_active
+    }
+
+    EMPLOYEES {
+        int id PK
+        int user_id FK "UK"
+        text bio
+        tinyint is_active
+    }
+
+    EMPLOYEE_SERVICES {
+        int employee_id PK "FK"
+        int service_id PK "FK"
+    }
+
+    EMPLOYEE_AVAILABILITY {
+        int id PK
+        int employee_id FK
+        tinyint day_of_week
+        time start_time
+        time end_time
+    }
+
+    RESERVATIONS {
+        int id PK
+        int user_id FK
+        int employee_id FK
+        int service_id FK
+        date reservation_date
+        time start_time
+        time end_time
+        enum status
+        text comment
+        timestamp created_at
+    }
