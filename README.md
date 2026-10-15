@@ -7,7 +7,7 @@
 Kompleksowa aplikacja internetowa umożliwiająca klientom samodzielną rezerwację terminów usług fryzjerskich online, a pracownikom oraz administratorom efektywne zarządzanie harmonogramem.
 
 ---
-## Aplikacja dostępna pod adresem: [here](aurafryzur.page.gd)
+## Aplikacja dostępna pod adresem: [aurafryzur.page.gd](aurafryzur.page.gd)
 
 ---
 
