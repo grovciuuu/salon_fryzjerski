@@ -2,7 +2,12 @@
 
 # System Rezerwacji Wizyt Online – Salon Fryzjerski
 
+---
+
 Kompleksowa aplikacja internetowa umożliwiająca klientom samodzielną rezerwację terminów usług fryzjerskich online, a pracownikom oraz administratorom efektywne zarządzanie harmonogramem.
+
+---
+## Aplikacja dostępna pod adresem: aurafryzur.page.gd
 
 ---
 
