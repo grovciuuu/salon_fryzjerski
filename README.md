@@ -9,6 +9,10 @@ Kompleksowa aplikacja internetowa umożliwiająca klientom samodzielną rezerwac
 ---
 ## Aplikacja dostępna pod adresem: [https://aurafryzur.free.je](https://aurafryzur.free.je)
 
+## logowanie do konta admina:
+login: admin@salon.pl
+haslo: haslo123
+
 ---
 
 ## Autorzy i Informacje o Projekcie
