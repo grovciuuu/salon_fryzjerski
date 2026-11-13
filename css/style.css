@@ -103,3 +103,25 @@ dl.detail dd{margin:0}
   dl.detail{grid-template-columns:1fr;gap:2px}
   dl.detail dt{margin-top:10px}
 }
+
+/* ===== Oferta i rezerwacja (etap 4) ===== */
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pills a{padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);text-decoration:none;color:var(--text);font-weight:600;font-size:.9rem}
+.pills a:hover{border-color:var(--primary);color:var(--primary)}
+.pills a.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:24px}
+.service-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.service-card h3{margin:0;font-family:Georgia,'Times New Roman',serif}
+.service-card p{margin:0}
+.service-card .meta{display:flex;justify-content:space-between;font-weight:600}
+.service-card .price{color:var(--primary)}
+.service-card .btn{margin-top:auto;text-align:center}
+.steps{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 20px}
+.steps li{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+.steps li.done{background:#fbeaf0;color:var(--primary-dark)}
+.steps li.active{background:var(--primary);border-color:var(--primary);color:#fff;font-weight:600}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.slot{padding:8px 16px;border:1px solid var(--primary);border-radius:6px;text-decoration:none;font-weight:600;color:var(--primary);background:#fff}
+.slot:hover{background:var(--primary);color:#fff}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:4px 0}
