@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * JEDEN plik wspólny dla całej aplikacji: konfiguracja, baza (PDO), funkcje pomocnicze,
  * logowanie/role oraz wspólny nagłówek i stopka HTML.
- * Każda strona w public/ zaczyna się od: require __DIR__ . '/../php/app.php';
+ * Każda strona w public/ zaczyna się od: require __DIR__ . '/../includes/app.php';
  */
 
 const ROLE_CLIENT   = 'client';
@@ -13,6 +13,7 @@ const ROLE_ADMIN    = 'admin';
 
 /* ---------- Ustawienia i start sesji ---------- */
 
+date_default_timezone_set('Europe/Warsaw');   // daty/godziny zawsze w czasie polskim
 ini_set('display_errors', '0');          // użytkownik nie widzi błędów technicznych
 ini_set('log_errors', '1');
 error_reporting(E_ALL);
@@ -32,7 +33,7 @@ function db(): PDO
 {
     static $pdo = null;
     if ($pdo === null) {
-        // Domyślne dane (XAMPP). Własne dane wpisz w php/config.php (plik jest w .gitignore):
+        // Domyślne dane (XAMPP). Własne dane wpisz w includes/config.php (plik jest w .gitignore):
         // <?php return ['name' => 'moja_baza', 'user' => 'root', 'pass' => 'haslo'];
         $c = ['host' => 'localhost', 'name' => 'salon_fryzjerski', 'user' => 'root', 'pass' => '', 'charset' => 'utf8mb4'];
         if (is_file(__DIR__ . '/config.php')) {
@@ -154,9 +155,12 @@ function password_error(string $p): ?string
  * W sesji jest tylko id użytkownika. Resztę (rolę, aktywność) pobieramy z bazy
  * przy każdym żądaniu – zmiana roli lub blokada konta działa od razu.
  */
-function current_user(): ?array
+function current_user(bool $refresh = false): ?array
 {
     static $user = false;
+    if ($refresh) {
+        $user = false;                    // wymuś ponowne pobranie z bazy (np. tuż po zalogowaniu)
+    }
     if ($user !== false) {
         return $user;
     }
@@ -179,6 +183,7 @@ function login_user(int $id): void
     session_regenerate_id(true);          // ochrona przed session fixation
     $_SESSION['user_id'] = $id;
     unset($_SESSION['csrf']);
+    current_user(true);                   // odśwież zapamiętanego użytkownika
 }
 
 function logout_user(): void
@@ -254,6 +259,10 @@ function page_header(string $title): void
         <label for="nav-toggle" class="nav-burger" aria-label="Menu">&#9776;</label>
         <nav class="nav-links">
             <a href="index.php">Strona główna</a>
+            <a href="services.php">Oferta</a>
+            <?php if ($u && $u['role'] === ROLE_CLIENT): ?>
+                <a href="booking.php">Zarezerwuj wizytę</a>
+            <?php endif; ?>
             <?php if ($u): ?>
                 <a href="<?= e(role_home($u['role'])) ?>">Mój panel</a>
                 <a href="profile.php">Profil</a>
@@ -277,15 +286,6 @@ function page_header(string $title): void
 function page_footer(): void
 {
     echo '</main><footer class="site-footer"><div class="container">&copy; ' . date('Y')
-       . ' Aura Fryzur – projekt semestralny</div></footer></body></html>';
-}
-
-/** Gotowa strona panelu (używana przez admin.php, employee.php, client.php). */
-function panel_page(string $role, string $title, string $text): void
-{
-    $u = require_role($role);
-    page_header($title);
-    echo '<div class="card"><h1>' . e($title) . '</h1><p>Witaj, <strong>'
-       . e($u['first_name'] . ' ' . $u['last_name']) . '</strong>!</p><p class="muted">' . e($text) . '</p></div>';
-    page_footer();
+       . ' Aura Fryzur – projekt semestralny</div></footer>'
+       . '<script src="js/confirm.js"></script></body></html>';
 }
