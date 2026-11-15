@@ -15,6 +15,12 @@ haslo: haslo123
 
 ---
 
+#logowanie do konta klienta:
+login: julia.klient@example.com
+haslo: haslo123
+
+---
+
 ## Autorzy i Informacje o Projekcie
 * **Projekt Semestralny** – Przedmiot: *Tworzenie stron i aplikacji internetowych*
 * **Klasa:** 5 Technikum Informatycznego
