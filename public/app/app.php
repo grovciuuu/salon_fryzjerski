@@ -13,6 +13,7 @@ const ROLE_ADMIN    = 'admin';
 
 /* ---------- Ustawienia i start sesji ---------- */
 
+date_default_timezone_set('Europe/Warsaw');   // daty/godziny zawsze w czasie polskim
 ini_set('display_errors', '0');          // użytkownik nie widzi błędów technicznych
 ini_set('log_errors', '1');
 error_reporting(E_ALL);
