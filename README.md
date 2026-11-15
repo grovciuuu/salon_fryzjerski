@@ -15,7 +15,7 @@ haslo: haslo123
 
 ---
 
-#logowanie do konta klienta:
+## logowanie do konta klienta:
 login: julia.klient@example.com
 haslo: haslo123
 
